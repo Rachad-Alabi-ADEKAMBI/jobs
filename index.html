@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/b14771b76e.js" crossorigin="anonymous"></script>
+    <link rel="icon" type="image/png" href="public/img/favicon.ico">
+    <link rel="stylesheet" href="./public/scss/main.css">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src='https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js'></script>
+    <title>Jobs</title>
+</head>
+<body>
+
+<div class="content" id="app">
+    <header class="header">
+        <div class="header__menu">
+            <button class="btn btn-disabled">
+                Home
+            </button>
+
+            <button class="btn btn-primary">
+                Manage jobs
+            </button>
+
+            <button class="btn btn-disabled">
+                Business
+            </button>
+
+
+        </div>
+
+        <div class="header__logo">
+            <img src="public/img/logo.png" alt="">
+            Publish jobs
+        </div>
+
+        <div class="header__options">
+            <img src="public/img/night-mode 1.png" alt="">
+            <img src="public/img/bell 1.png" alt="">
+            <div class="user">
+                <img src="https://images.unsplash.com/photo-1664575602554-2087b04935a5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" alt="">
+                <div class="availability"></div>
+            </div>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="main__top">
+            <h1>
+                Manage jobs ! <i class="fas fa-house-user"></i>
+            </h1>
+
+
+
+            <button class="btn btn-primary">
+                Add new job +
+            </button>
+        </div>
+
+        <div class="main__filters">
+            <div class="category">
+                <select name="" id="">
+<option value="">All categories</option>
+                </select>
+            </div>
+
+            <div class="search">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" placeholder="Search jobs">
+            </div>
+
+            <div class="options">
+                <label for="">
+                    <select name="" id="">
+                        <option value="">Date</option>
+                    </select>
+                </label>
+
+                <label for="">
+                    <select name="" id="">
+                        <option value="">Company</option>
+                    </select>
+                </label>
+
+                <label for="">
+                    <select name="" id="">
+                        <option value="">City</option>
+                    </select>
+                </label>
+            </div>
+        </div>
+
+        <div class="card">
+                <div class="card__infos">
+                    <img src="" alt="">
+                    <div class="">
+                        <h2>Graphics designer</h2>
+                        <p> <img src="public/img/buildings.png" alt=""> Dell <a href=""><img src="public/img/share.png" alt=""></a> </p>
+                        <p><img src="public/img/location.png" alt=""> Pakistan</p>
+                    </div>
+                </div>
+
+                <div class="card__stats">
+                    <div class="users">
+                        <i class="fa-solid fa-users"></i>
+                    </div>
+
+                    200 application received
+                    <i class="fas fa-arrow-up-right-from-square"></i>
+                </div>
+
+                <div class="card__author">
+                    <i class="fas fa-users"></i>
+
+                    <p>Posted by mr ahmed 2h ago</p>
+                </div>
+
+                <div class="card__status">
+                    <p>Active</p> <br>
+                    <i class="fas fa-pen-to-square"></i>
+                </div>
+
+                <div class="card__options">
+                    <p>Disable jobs</p> <input type="radio">
+                </div>
+
+                <div class="card__menu">
+                    <button class="btn btn-cyan">
+                        View analytics
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+
+<script src="public/js/vue.js"></script>
+</body>
+</html>
