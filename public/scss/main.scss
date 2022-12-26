@@ -11,6 +11,7 @@ html, body{
     padding: 0;
     box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
 
 }
 
@@ -37,6 +38,17 @@ html, body{
     cursor: pointer;
 }
 
+.btn-primary{
+    font-weight: 400;
+}
+
+.btn-disabled{
+    background-color: $white;
+    color: $grey;
+    border: 1px $white solid;
+    font-weight: 400;
+}
+
 i{
     color: $grey;
 }
@@ -53,13 +65,26 @@ i{
         @include flex();
         margin: 30px auto;
         width: 95%;
+        text-align: center;
 
         &__menu{
+            @include flex();
+            justify-content: start;
 
+            button{
+                margin: 10px;
+            }
         }
 
         &__logo{
             cursor: pointer;
+            margin: auto;
+            text-align: center;
+
+
+            img{
+                margin: auto 0;
+            }
         }
 
         &__options{
@@ -69,9 +94,19 @@ i{
             img{
                 width: 20px;
                 height: 20px;
+
+
+            }
+
+            i{
+                font-size: 1.2em;
+                color: $grey;
                 margin: 10px 10px auto auto;
                 cursor: pointer;
+            }
 
+            i:hover{
+                color: $purple;
             }
 
 
@@ -129,12 +164,14 @@ i{
 
         &__filters{
             @include flex();
+            justify-content: start;
 
             .category{
                 border: 1px solid $purple;
+                margin: 15px;
                 select{
                     @include button();
-                    width: 370px;
+                    width: 330px;
                     color: $white;
                     font-weight: bold;
                     padding-left: 15px;
@@ -143,10 +180,11 @@ i{
 
             .search{
                 border: 1px solid $purple;
+                margin: 15px;
                 color: $white;
                 input{
                     @include button();
-                    width: 250px;
+                    width: 400px;
                     color: $white;
                     font-weight: bold;
                     padding-left: 15px;
@@ -155,14 +193,16 @@ i{
 
             .options{
                 @include flex();
+                justify-content: start;
 
                 label{
-                    width: 180px;
+                    width: 120px;
                     height: 45px;
+                    margin: 20px 15px;
 
                     select{
                         height: 45px;
-                        width: 170px;
+                        width: 120px;
                         padding-left: 10px;
                         color: $grey;
                         padding-right: 10px;
@@ -174,9 +214,10 @@ i{
 
         .card{
             display: grid;
-            width: 1000px;
+            width: 750px;
             margin: 30px auto auto 0;
-            height: 230px;
+              padding-left: 40px;
+            height: 250px;
             box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
             border-radius: 10px;
             color: $grey;
@@ -190,39 +231,142 @@ i{
             &__infos{
                 grid-area: 'infos';
                 @include flex();
+                justify-content: start;
                 margin: auto 0;
                 text-align: left;
+                height: 80px;
+
+
+                img{
+                    width: 70px;
+                    height: 70px;
+                    margin: 20px 10px auto 0;
+                }
 
                 &__list{
                     line-height: 1em;
                     margin: auto 0;
+                    text-align: left;
                     float: left;
+                    background-color: green($color: #000000);
+
+                    h2{
+                        color: $black;
+                        font-weight: 450;
+                    }
+                    p{
+                        margin: auto 0;
+                        i{
+                            width: 25px;
+                            height: 25px;
+                            margin-left: 20px;
+                        }
+                    }
                 }
             }
 
             &__stats{
                 grid-area: stats;
+                @include flex();
+                margin: 50px auto auto 0;
+
+
+                .users{
+                    width: 30px;
+                    height: 30px;
+                    background-color: $purple;
+                    display: table;
+                    text-align: center;
+
+                    i{
+                        color: $white;
+                        display: table-cell;
+                        vertical-align: middle;
+                    }
+                }
+
+                p{
+                    margin: 8px auto auto 5px;
+                }
             }
 
             &__author{
                 grid-area: author;
+                @include flex();
+                justify-content: baseline;
+                text-align: left;
+
+                p{
+                    margin: auto 0;
+                }
             }
 
             &__status{
                 grid-area: status;
                 text-align: right;
+                @include flex();
 
                 p{
-                    color: red
+                    color: $green;
+                    font-weight: 400;
+                    margin: 5px 20px auto auto;
                 }
+
             }
 
             &__options{
                 grid-area: options;
+
+                p,
+                input {
+                    margin: auto 20px auto auto;
+                    float: right;
+                }
             }
 
             &__menu{
                 grid-area: menu;
+                text-align: right;
+
+                button{
+                    margin: auto 20px auto auto;
+                }
+            }
+        }
+    }
+}
+
+/*responsive for 1023px*/
+@media screen and (min-width: 350px) and (max-width: 765px) {
+    .content{
+        .main{
+            &__filters{
+                .category{
+                    margin: 10px;
+                   select{
+                    width: 280px;
+                   }
+                }
+
+                .search{
+                    margin: 10px;
+                    input{
+                        width: 300px;
+                    }
+                }
+
+                .options{
+                    flex-direction: column;
+                    label{
+                        margin: 10px 15px;
+
+                        select{
+                            width: 140px;
+                        }
+                    }
+                }
+
+
             }
         }
     }
