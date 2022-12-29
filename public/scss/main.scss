@@ -141,6 +141,7 @@ i{
         width: 95%;
         margin: auto;
         display: block;
+        text-align: center;
 
         &__top{
             @include flex();
@@ -367,6 +368,21 @@ i{
                 }
 
 
+            }
+
+            .card{
+               width: 300px;
+                height: 200px;
+                margin: 30px auto;
+
+
+                &__infos{
+                    height: 50px;
+                    img{
+                        width: 40px;
+                        height: 40px;
+                    }
+                }
             }
         }
     }
