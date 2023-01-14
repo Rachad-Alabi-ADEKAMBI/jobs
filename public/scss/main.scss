@@ -76,7 +76,7 @@ html, body{
 }
 
 .text-green{
-    color:$green;
+    color: $green;
 }
 
 i{
@@ -326,8 +326,6 @@ i{
                     margin: auto 0;
                     text-align: left;
                     float: left;
-                    background-color: green($color: #000000);
-
                     h2{
                         color: $black;
                         font-weight: 400;
@@ -378,7 +376,6 @@ i{
             &__author{
                 grid-area: author;
                 @include flex();
-                justify-content: baseline;
                 text-align: left;
 
                 p{
@@ -518,11 +515,6 @@ i{
                 .search{
                     @include flex();
                     margin: 10px;
-                justify-content: baseline;
-
-                    i{
-
-                    }
 
                     input{
                         width: 300px;

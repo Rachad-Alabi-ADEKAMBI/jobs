@@ -323,7 +323,6 @@ i {
   margin: auto 0;
   text-align: left;
   float: left;
-  background-color: 0;
 }
 .content .main .card__infos__list h2 {
   color: black;
@@ -370,7 +369,6 @@ i {
   flex-direction: row;
   justify-content: space-between;
   flex-wrap: wrap;
-  justify-content: baseline;
   text-align: left;
 }
 .content .main .card__author p {
@@ -480,7 +478,6 @@ i {
     justify-content: space-between;
     flex-wrap: wrap;
     margin: 10px;
-    justify-content: baseline;
   }
   .content .main__filters .search input {
     width: 300px;
