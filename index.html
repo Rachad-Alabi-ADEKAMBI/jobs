@@ -1,225 +1,224 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://kit.fontawesome.com/b14771b76e.js" crossorigin="anonymous"></script>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://kit.fontawesome.com/b14771b76e.js" crossorigin="anonymous"></script>
 
 
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
 
 
-    <link rel="stylesheet" href="./public/scss/main.css">
-    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-    <script src='https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js'></script>
+        <link rel="stylesheet" href="./public/scss/main.css">
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+        <script src='https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js'></script>
 
-    <title>Jobs</title>
-</head>
-<body>
+        <title>Jobs</title>
+    </head>
+    <body>
 
-<div class="content" id="app">
-    <header class="header">
-        <div class="header__menu">
-            <button class="btn btn-disabled">
-                Home
-            </button>
+    <div class="content" id="app">
+        <header class="header">
+            <div class="header__menu">
+                <button class="btn btn-disabled">
+                    Home
+                </button>
 
-            <button class="btn btn-primary">
-                Manage jobs
-            </button>
+                <button class="btn btn-primary">
+                    Manage jobs
+                </button>
 
-            <button class="btn btn-disabled">
-                Business
-            </button>
+                <button class="btn btn-disabled">
+                    Business
+                </button>
 
 
-        </div>
-
-        <div class="header__logo">
-            <img src="public/img/logo.png" alt="">
-            <p>
-                Publish jobs
-            </p>
-        </div>
-
-        <div class="header__options">
-            <i class="bi bi-moon"></i>
-            <i class="bi bi-bell"></i>
-            <div class="user">
-                <img src="https://images.unsplash.com/photo-1664575602554-2087b04935a5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" alt="">
-                <div class="availability"></div>
-            </div>
-        </div>
-    </header>
-
-    <main class="main">
-        <div class="main__top">
-            <h1>
-                Manage jobs <span>|</span><i class="bi bi-house-door"></i>
-            </h1>
-
-            <button class="btn btn-primary">
-                Add new job <i class="bi bi-plus-lg"></i>
-            </button>
-        </div>
-
-        <div class="main__filters">
-            <div class="category">
-                <select name="" id="">
-                    <option value="">All categories</option>
-                </select>
             </div>
 
-            <div class="search">
-                <i class="bi bi-search"></i>
-                <input type="text" placeholder="Search jobs">
-                <button class="btn btn-cyan">Search</button>
+            <div class="header__logo">
+                <img src="public/img/logo.png" alt="">
+                <p>
+                    Publish jobs
+                </p>
             </div>
 
-            <div class="options">
-                <label for="">
-                    <select name="" id="">
-                        <option value="">Date</option>
+            <div class="header__options">
+                <i class="bi bi-moon"></i>
+                <i class="bi bi-bell"></i>
+                <div class="user">
+                    <img src="https://images.unsplash.com/photo-1664575602554-2087b04935a5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" alt="">
+                    <div class="availability"></div>
+                </div>
+            </div>
+        </header>
+
+        <main class="main">
+            <div class="main__top">
+                <h1>
+                    Manage jobs <span>|</span><i class="bi bi-house-door"></i>
+                </h1>
+
+                <button class="btn btn-primary">
+                    Add new job <i class="bi bi-plus-lg"></i>
+                </button>
+            </div>
+
+            <div class="main__filters">
+                <div class="category">
+                    <select name="category" id="category">
+                        <option value="">All categories</option>
                     </select>
-                </label>
-
-                <label for="">
-                    <select name="" id="">
-                        <option value="">Company</option>
-                    </select>
-                </label>
-
-                <label for="">
-                    <select name="" id="">
-                        <option value="">City</option>
-                    </select>
-                </label>
-            </div>
-        </div>
-
-       <!--
-        //commented section for the test
-        <ul>
-            <li v-for="job in jobs" :key="job.id">
-                {{ job.id }}
-            </li>
-        </ul>
-        -->
-
-             <div class="card">
-                <div class="card__infos">
-                    <img src="public/img/logo-dell.png" alt="image of recruiters">
-                    <div class="card__infos__list">
-                        <h2>Graphics designer</h2>
-                        <p> <i class="bi bi-building"></i> Dell
-                            <i class="bi bi-share"></i> </p>
-                        <p><i class="bi bi-geo-alt"></i> Pakistan</p>
-                    </div>
                 </div>
 
-                <div class="card__stats">
-                    <div class="users">
-                        <i class="fas fa-users"></i>
-                    </div>
-
-                    <p>
-                        200 application received
-                    </p>
-                    <i class="fas fa-arrow-up-right-from-square"></i>
+                <div class="search">
+                    <i class="bi bi-search"></i>
+                    <input type="text" placeholder="Search jobs">
+                    <button class="btn btn-cyan">Search</button>
                 </div>
 
-                <div class="card__author">
-                    <p><i class="bi bi-person"></i> Posted by mr ahmed 2h ago</p>
-                </div>
+                <div class="options">
+                    <label for="date">
+                        <select name="date" id="date">
+                            <option value="">Date</option>
+                        </select>
+                    </label>
 
-                <div class="card__status">
-                    <p class="text text-green">Active</p>
-                    <div class="icons"> <i class="bi bi-pencil-square"></i></div>
-                </div>
+                    <label for="company">
+                        <select name="company" id="company">
+                            <option value="">Company</option>
+                        </select>
+                    </label>
 
-                <div class="card__options">
-                    <p>Disable jobs</p>
-                    <label class="toggle" for="myToggle">
-                        <input class="toggle__input" name="" type="checkbox" id="myToggle">
-                        <div class="toggle__fill"></div>
+                    <label for="city">
+                        <select name="city" id="city">
+                            <option value="city 1">City</option>
+                        </select>
                     </label>
                 </div>
-
-                <div class="card__menu">
-                    <button class="btn btn-light">
-                        <i class="bi bi-bar-chart"></i> View analytics
-                    </button>
-                    <button class="btn btn-cyan">
-                        <i class="bi bi-lightning"></i> Campaigned
-                    </button>
-                </div>
             </div>
 
-            <div class="card">
-                <div class="card__infos">
-                    <img src="public/img/logo-dell.png" alt="image of recruiters">
-                    <div class="card__infos__list">
-                        <h2>Web developper</h2>
-                        <p> <i class="bi bi-building"></i> Dell
-                            <i class="bi bi-share"></i> </p>
-                        <p><i class="bi bi-geo-alt"></i> Pakistan</p>
+        <!--
+            //commented section for the test
+            <ul>
+                <li v-for="job in jobs" :key="job.id">
+                    {{ job.id }}
+                </li>
+            </ul>
+            -->
+
+                <div class="card">
+                    <div class="card__infos">
+                        <img src="public/img/logo-dell.png" alt="image of recruiters">
+                        <div class="card__infos__list">
+                            <h2>Graphics designer</h2>
+                            <p> <i class="bi bi-building"></i> Dell
+                                <i class="bi bi-share"></i> </p>
+                            <p><i class="bi bi-geo-alt"></i> Pakistan</p>
+                        </div>
+                    </div>
+
+                    <div class="card__stats">
+                        <div class="users">
+                            <i class="fas fa-users"></i>
+                        </div>
+
+                        <p>
+                            200 application received
+                        </p>
+                        <i class="fas fa-arrow-up-right-from-square"></i>
+                    </div>
+
+                    <div class="card__author">
+                        <p><i class="bi bi-person"></i> Posted by mr ahmed 2h ago</p>
+                    </div>
+
+                    <div class="card__status">
+                        <p class="text text-green">Active</p>
+                        <div class="icons"> <i class="bi bi-pencil-square"></i></div>
+                    </div>
+
+                    <div class="card__options">
+                        <p>Disable jobs</p>
+                        <label class="toggle" for="myTooggle">
+                            <input class="toggle__input" name="status" type="checkbox" id="myTooggle">
+                            <div class="toggle__fill"></div>
+                        </label>
+                    </div>
+
+                    <div class="card__menu">
+                        <button class="btn btn-light">
+                            <i class="bi bi-bar-chart"></i> View analytics
+                        </button>
+                        <button class="btn btn-cyan">
+                            <i class="bi bi-lightning"></i> Campaigned
+                        </button>
                     </div>
                 </div>
 
-                <div class="card__stats">
-                    <div class="users">
-                        <i class="fas fa-users"></i>
+                <div class="card">
+                    <div class="card__infos">
+                        <img src="public/img/logo-dell.png" alt="image of recruiters">
+                        <div class="card__infos__list">
+                            <h2>Web developper</h2>
+                            <p> <i class="bi bi-building"></i> Dell
+                                <i class="bi bi-share"></i> </p>
+                            <p><i class="bi bi-geo-alt"></i> Pakistan</p>
+                        </div>
                     </div>
 
-                    <p>
-                        200 application received
-                    </p>
-                    <i class="fas fa-arrow-up-right-from-square"></i>
-                </div>
+                    <div class="card__stats">
+                        <div class="users">
+                            <i class="fas fa-users"></i>
+                        </div>
 
-                <div class="card__author">
-                    <p><i class="bi bi-person"></i> Posted by mr ahmed 2h ago</p>
-                </div>
+                        <p>
+                            200 application received
+                        </p>
+                        <i class="fas fa-arrow-up-right-from-square"></i>
+                    </div>
 
-                <div class="card__status">
-                    <p class="text text-red">Active</p>
-                    <div class="icons"> <i class="bi bi-pencil-square"></i></div>
-                </div>
+                    <div class="card__author">
+                        <p><i class="bi bi-person"></i> Posted by mr ahmed 2h ago</p>
+                    </div>
 
-                <div class="card__options">
-                    <p>Disable jobs</p>
-                    <label class="toggle" for="myToggle">
-                        <input class="toggle__input" name="" type="checkbox" id="myToggle">
-                        <div class="toggle__fill"></div>
-                    </label>
-                </div>
+                    <div class="card__status">
+                        <p class="text text-red">Active</p>
+                        <div class="icons"> <i class="bi bi-pencil-square"></i></div>
+                    </div>
 
-                <div class="card__menu">
-                    <button class="btn btn-light">
-                        <i class="bi bi-bar-chart"></i> View analytics
-                    </button>
-                    <button class="btn btn-cyan">
-                        <i class="bi bi-lightning"></i> Campaigned
-                    </button>
-                </div>
-            </div>
-        </div>
-    </main>
-</div>
+                    <div class="card__options">
+                        <p>Disable jobs</p>
+                        <label class="toggle" for="myToggle">
+                            <input class="toggle__input" name="" type="checkbox" id="myToggle">
+                            <div class="toggle__fill"></div>
+                        </label>
+                    </div>
 
-<script src="./public/js/vue.js"></script>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
-</script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
-    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
-</script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
-    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
-</script>
-</body>
-</html>
+                    <div class="card__menu">
+                        <button class="btn btn-light">
+                            <i class="bi bi-bar-chart"></i> View analytics
+                        </button>
+                        <button class="btn btn-cyan">
+                            <i class="bi bi-lightning"></i> Campaigned
+                        </button>
+                    </div>
+                </div>
+        </main>
+    </div>
+
+    <script src="./public/js/vue.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+    </body>
+    </html>
